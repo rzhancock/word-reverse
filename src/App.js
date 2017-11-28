@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Input from './Input.js'
+import Reverse from './Reverse.js'
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
         <header className="word-rev-header">
           <h1 className="word-rev-title">Word Reverse</h1>
         </header>
-       <Input />
+       <Reverse />
       </div>
     );
   }
