@@ -2,24 +2,38 @@ import React, { Component } from 'react';
 import './App.css';
 
 export default class Reverse extends React.Component {
-	constructor(props) {
-   		super(props);
-    	this.state = {text: ''};
+	constructor (props) {
+	  super(props);
+	  this.state = {
+	    text: ''
+	  }
+	  this.handleChange = this.handleChange.bind(this);
+	}
 
-    	handleReverse = () => {
-    		
-    	}
-  	}
+
+
+	handleChange = function(e) {
+		let input = e.target.value;
+		this.setState({
+
+				text:  input
+		});
+
+		console.log(this.state.text);
+
+	}
 
 	render() {
 		return (
-			<div className='wr-container'>
-				<input className='input' type='text' placeHolder="Enter any word, phrase, or string" />
+			<form onSubmit={(e) => this.handleChange(e)}>
+				<input className='input' type='text' placeholder="Enter any word, phrase, or string" />
 				
-				<button type='button' onClick={handleReverse}>
+				<button type='button' onClick={(e) => this.handleChange(e)}>
 					Reverse
 				</button>
-			</div>
-		);
+			</form>
+		)
+
+			
+		}
 	}
-}
