@@ -5,32 +5,40 @@ export default class Reverse extends React.Component {
 	constructor (props) {
 	  super(props);
 	  this.state = {
-	    text: ''
+	    text: '',
+	    reversed: ''
 	  }
 	  this.handleChange = this.handleChange.bind(this);
+	  this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	
 
-
-	handleChange = function(e) {
-		let input = e.target.value;
-		this.setState({
-
-				text:  input
-		});
-
-		console.log(this.state.text);
-
+	handleChange(e) {
+		this.setState({ text: e.target.value });
 	}
+
+	handleSubmit(e) {
+		let input = this.state.text;
+		input = input.split(' ').map(x => x.split('').reverse().join('')).join(' ');
+		this.setState({ reversed: input });
+
+		e.preventDefault();
+	}
+		
+	
 
 	render() {
 		return (
-			<form onSubmit={(e) => this.handleChange(e)}>
-				<input className='input' type='text' placeholder="Enter any word, phrase, or string" />
-				
-				<button type='button' onClick={(e) => this.handleChange(e)}>
-					Reverse
-				</button>
+			<form onSubmit={this.handleSubmit}>
+				<input 
+					className='input' 
+					type='text' 
+					placeholder="Enter any word, phrase, or string" 
+					
+					onChange={this.handleChange} />
+
+				<button type='submit'> Reverse </button>
 			</form>
 		)
 
