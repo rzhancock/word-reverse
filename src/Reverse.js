@@ -6,7 +6,6 @@ export default class Reverse extends React.Component {
 	  super(props);
 	  this.state = {
 	    text: '',
-	    reversed: ''
 	  }
 	  this.handleChange = this.handleChange.bind(this);
 	  this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,11 +18,14 @@ export default class Reverse extends React.Component {
 	}
 
 	handleSubmit(e) {
-		let input = this.state.text;
-		input = input.split(' ').map(x => x.split('').reverse().join('')).join(' ');
-		this.setState({ reversed: input });
-
 		e.preventDefault();
+		
+		let input = this.state.text;
+		let reversed = input.split(' ').map(x => x.split('').reverse().join('')).join(' ');
+		this.setState({ text: reversed });
+		console.log(this.state.text)
+		
+
 	}
 		
 	
@@ -35,7 +37,7 @@ export default class Reverse extends React.Component {
 					className='input' 
 					type='text' 
 					placeholder="Enter any word, phrase, or string" 
-					
+					value={this.state.text}
 					onChange={this.handleChange} />
 
 				<button type='submit'> Reverse </button>
