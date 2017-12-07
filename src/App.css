@@ -1,25 +1,35 @@
+
 .word-reverse {
   text-align: center;
+  background: #777;
+  height: auto;
 }
 
-.word-rev-header {
-  background-color: #666;
-  height: auto;
-  padding: 20px;
-  color: white;
-}
 
 .word-rev-title {
-  font-size: 1.5em;
+  font-size: 2em;
+  color: white;
+  margin-top: 0;
+  padding-top: 1em;
 }
 
 .input {
-  width: 20%;
+  height: auto;
+  width: 25%;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
 }
 
-button {
-  border-radius: 3px;
-}
 
+form > button {
+  display: inline-block;
+  background: #777;
+  color: #FFF;
+  font-size: 1.5em;
+  border: none;
+  height: auto;
+  margin-left: 3px;
+  text-shadow: 2px 2px #555;
+}
 
 
