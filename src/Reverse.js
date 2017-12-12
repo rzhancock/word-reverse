@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Reverse.css';
 
 export default class Reverse extends React.Component {
 	constructor (props) {
@@ -39,6 +39,8 @@ export default class Reverse extends React.Component {
 
 	render() {
 		return (
+		<div className="word-reverse">  
+          <h1 className="word-rev-title">Word Reverse</h1>
 			<form onSubmit={this.handleSubmit}>
 				<input 
 					className='input' 
@@ -49,6 +51,7 @@ export default class Reverse extends React.Component {
 
 				<button type='submit'> Reverse! </button>
 			</form>
+		</div>
 		)
 
 			
